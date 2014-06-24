@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>OMDB Movie Searcher</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css" media="all">
+</head>
+<body>
+
+
+<div data-ng-app="omdbSearcher">
+  <div data-ng-controller="searchInput">
+    <input type="text" data-ng-model="dataMessage">
+    <p>{{dataMessage}}</p>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
+</body>
+</html>
