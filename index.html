@@ -5,19 +5,28 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css" media="all">
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/search.js"></script>
 </head>
 <body>
+  <div data-ng-app="omdbSearcher">
+    <div data-ng-controller="MovieController">
 
+      <form data-ng-submit="search(searchInput)">
+        <input type="input" placeholder="Enter Movie Name" data-ng-model="searchInput">
+      </form>
 
-<div data-ng-app="omdbSearcher">
-  <div data-ng-controller="searchInput">
-    <input type="text" data-ng-model="dataMessage">
-    <p>{{dataMessage}}</p>
-  </div>
-</div>
+      <div data-ng-repeat="movie in movieList">
 
-
-<script type="text/javascript" src="js/angular.min.js"></script>
-<script type="text/javascript" src="js/search.js"></script>
+        <ul data-ng-click="showDetails(movie)">
+          <li>{{ movie.Title | uppercase }}</li>
+          <br/>
+          </li>{{ movie.Year }}</li>
+          <br/>
+          <li>{{ movieDetails.Plot }}</li>
+        </ul> <!--ngclick-->
+      </div> <!--ngrepeat-->
+    </div> <!--ngapp-->
+  </div> <!--ngcontroller-->
 </body>
 </html>
