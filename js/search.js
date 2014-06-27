@@ -8,6 +8,7 @@
     '$scope', '$http', function($scope, $http) {
       $scope.movieList = [];
       $scope.search = function(movie) {
+        $scope.hiddenMovieInfo = false;
         return $http({
           method: "GET",
           url: "http://www.omdbapi.com/",

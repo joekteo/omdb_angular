@@ -18,14 +18,25 @@
 
       <div data-ng-repeat="movie in movieList">
 
-        <ul data-ng-click="showDetails(movie)">
-          <li>{{ movie.Title | uppercase }}</li>
+        <h5 data-ng-click="showDetails(movie); hiddenMovieInfo = !hiddenMovieInfo">
+          {{ movie.Title | uppercase }}
           <br/>
-          </li>{{ movie.Year }}</li>
+<!--           {{ movie.Year }}
           <br/>
-          <li>{{ movieDetails.Plot }}</li>
-        </ul> <!--ngclick-->
+          {{ movieDetails.Plot }}
+          <br/>
+          {{ movieDetails.Rated }} -->
+          <div data-ng-show="hiddenMovieInfo">
+            <!-- {{ movie.Title }} -->
+            <br/>
+            {{ movieDetails.Plot }}
+            <br/>
+            {{ movieDetails.Rated }}
+          </div> <!--nghide-->
+        </h5> <!--ngclick-->
       </div> <!--ngrepeat-->
+
+
     </div> <!--ngapp-->
   </div> <!--ngcontroller-->
 </body>

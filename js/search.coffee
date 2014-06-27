@@ -4,6 +4,7 @@ omdbSearcher.controller 'MovieController', ['$scope', '$http', ($scope, $http)->
   $scope.movieList = []
 
   $scope.search = (movie) ->
+    $scope.hiddenMovieInfo = false
     $http(
       method: "GET",
       url: "http://www.omdbapi.com/",
@@ -15,6 +16,7 @@ omdbSearcher.controller 'MovieController', ['$scope', '$http', ($scope, $http)->
       console.log "unable to find movie"
 
   $scope.showDetails = (movie) ->
+    # $scope.hiddenMovieInfo = true
     $http(
       method: "GET",
       url: "http://www.omdbapi.com/",
