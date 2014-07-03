@@ -1,43 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>OMDB Movie Searcher</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css" media="all">
-  <script type="text/javascript" src="js/angular.min.js"></script>
-  <script type="text/javascript" src="js/search.js"></script>
-</head>
-<body>
-  <div data-ng-app="omdbSearcher">
-    <div data-ng-controller="MovieController">
+<html lang="EN">
 
-      <form data-ng-submit="search(searchInput)">
-        <input type="input" placeholder="Enter Movie Name" data-ng-model="searchInput">
-      </form>
+  <head>
+    <title>OMDB Movie Searcher</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" media="all">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+  </head>
 
-      <div data-ng-repeat="movie in movieList">
+  <body>
+    <div data-ng-app="omdbSearcher">
+      <div data-ng-controller="MovieController" class="container">
+        <div class="row">
+          <form data-ng-submit="search(searchInput)">
+            <input type="input" id="input" placeholder="Enter Movie Name" data-ng-model="searchInput">
+          </form>
+        </div>
 
-        <h5 data-ng-click="showDetails(movie); hiddenMovieInfo = !hiddenMovieInfo">
-          {{ movie.Title | uppercase }}
-          <br/>
-<!--           {{ movie.Year }}
-          <br/>
-          {{ movieDetails.Plot }}
-          <br/>
-          {{ movieDetails.Rated }} -->
-          <div data-ng-show="hiddenMovieInfo">
-            <!-- {{ movie.Title }} -->
-            <br/>
-            {{ movieDetails.Plot }}
-            <br/>
-            {{ movieDetails.Rated }}
-          </div> <!--nghide-->
-        </h5> <!--ngclick-->
-      </div> <!--ngrepeat-->
+            <div class="movieList" data-ng-repeat="movie in movieList">
+              <h5 data-ng-click="showDetails(movie)">{{ movie.Title | uppercase }}</h5>
+            </div>
+              <div class="col-md-6">
+                <div class="movieInfo" data-ng-show="hiddenMovieInfo">
+                  <em>{{ movieDetails.Title }}</em>
+                  <br/>
+                  <br/>
+                  <img class="movie-poster" src="{{ movieDetails.Poster }}">
+                  <br/>
+                  <br/>
+                  <p>Year: {{ movieDetails.Year }}</p>
+                  <p>Rated: {{ movieDetails.Rated }}</p>
+                  <p>Duration: {{ movieDetails.Runtime }}</p>
+                  <p>{{ movieDetails.Plot }}</p>
+                </div>
+              </div>
 
 
+
+        </div>
+      </div> <!--ngcontroller-->
     </div> <!--ngapp-->
-  </div> <!--ngcontroller-->
-</body>
+  </body>
+
 </html>

@@ -1,0 +1,42 @@
+body {
+  background-color: #462D44;
+  font-family: 'Oxygen', sans-serif;
+  color: #CCCCCC;
+}
+
+.row {
+  margin: 2em 0;
+}
+
+#input {
+  border-radius: 7px;
+  font-size: 2em;
+  width: 100%;
+}
+
+div.movieList {
+  font-size: 1.5em;
+  line-height: 1em;
+  padding: 0.5em;
+}
+
+.movieInfo {
+  background: #655D6E;
+  border-color: white;
+  border-radius: 6px 6px;
+  border-width: 1em;
+  padding: 1em;
+  text-align: center;
+}
+
+.movieInfo em {
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.movieInfo p {
+  font-size: 1em;
+  font-weight: light;
+  text-align: center;
+}

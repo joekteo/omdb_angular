@@ -7,8 +7,8 @@
   omdbSearcher.controller('MovieController', [
     '$scope', '$http', function($scope, $http) {
       $scope.movieList = [];
+      $scope.hiddenMovieInfo = false;
       $scope.search = function(movie) {
-        $scope.hiddenMovieInfo = false;
         return $http({
           method: "GET",
           url: "http://www.omdbapi.com/",
@@ -22,6 +22,7 @@
         });
       };
       return $scope.showDetails = function(movie) {
+        $scope.hiddenMovieInfo = true;
         return $http({
           method: "GET",
           url: "http://www.omdbapi.com/",
@@ -39,3 +40,5 @@
   ]);
 
 }).call(this);
+
+//# sourceMappingURL=search.map
