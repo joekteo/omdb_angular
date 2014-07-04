@@ -4,6 +4,12 @@ body {
   color: #CCCCCC;
 }
 
+h1 {
+  font-size: 7.5em;
+  margin-bottom: -50px;
+  text-align: center;
+}
+
 .row {
   margin: 2em 0;
 }
