@@ -14,35 +14,32 @@
   <body>
     <div data-ng-app="omdbSearcher">
       <div data-ng-controller="MovieController" class="container">
-        <div class="row">
-          <form data-ng-submit="search(searchInput)">
-            <input type="input" id="input" placeholder="Enter Movie Name" data-ng-model="searchInput">
-          </form>
+        <form data-ng-submit="search(searchInput)">
+          <input type="input" id="input" placeholder="Enter Movie Name" data-ng-model="searchInput">
+        </form>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="movieList" data-ng-repeat="movie in movieList">
+            <h5 data-ng-click="showDetails(movie)">{{ movie.Title | uppercase }}</h5>
+          </div>
         </div>
-
-            <div class="movieList" data-ng-repeat="movie in movieList">
-              <h5 data-ng-click="showDetails(movie)">{{ movie.Title | uppercase }}</h5>
-            </div>
-              <div class="col-md-6">
-                <div class="movieInfo" data-ng-show="hiddenMovieInfo">
-                  <em>{{ movieDetails.Title }}</em>
-                  <br/>
-                  <br/>
-                  <img class="movie-poster" src="{{ movieDetails.Poster }}">
-                  <br/>
-                  <br/>
-                  <p>Year: {{ movieDetails.Year }}</p>
-                  <p>Rated: {{ movieDetails.Rated }}</p>
-                  <p>Duration: {{ movieDetails.Runtime }}</p>
-                  <p>{{ movieDetails.Plot }}</p>
-                </div>
-              </div>
-
-
-
+        <div class="col-md-6">
+          <div class="movieInfo" data-ng-show="hiddenMovieInfo">
+            <em>{{ movieDetails.Title }}</em>
+            <br/>
+            <br/>
+            <img class="movie-poster" src="{{ movieDetails.Poster }}">
+            <br/>
+            <br/>
+            <p>Year: {{ movieDetails.Year }}</p>
+            <p>Rated: {{ movieDetails.Rated }}</p>
+            <p>Duration: {{ movieDetails.Runtime }}</p>
+            <p>{{ movieDetails.Plot }}</p>
+          </div>
         </div>
-      </div> <!--ngcontroller-->
-    </div> <!--ngapp-->
+      </div>
+      </div>
+    </div>
   </body>
 
 </html>
