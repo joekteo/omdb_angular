@@ -27,14 +27,15 @@
         <div class="col-md-6">
           <div class="movieInfo" data-ng-show="hiddenMovieInfo">
             <em>{{ movieDetails.Title }}</em>
-            <br/>
+            <hr>
             <br/>
             <img class="movie-poster" src="{{ movieDetails.Poster }}">
             <br/>
             <br/>
-            <p>Year: {{ movieDetails.Year }}</p>
-            <p>Rated: {{ movieDetails.Rated }}</p>
-            <p>Duration: {{ movieDetails.Runtime }}</p>
+            <span>Year: {{ movieDetails.Year }} | </span>
+            <span>Rated: {{ movieDetails.Rated }} | </span>
+            <span>Duration: {{ movieDetails.Runtime }}</span>
+            <hr>
             <p>{{ movieDetails.Plot }}</p>
           </div>
         </div>
